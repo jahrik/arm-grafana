@@ -5,9 +5,9 @@ Multi-arch Grafana image: pinned `FROM` over official `grafana/grafana` + `GF_IN
 ## Commands
 
 ```bash
-make build                                  # build jahrik/arm-grafana:latest
+just build                                  # build jahrik/arm-grafana:latest
 docker run -d -p 3000:3000 jahrik/arm-grafana:latest   # then curl :3000/api/health
-make deploy                                 # swarm stack deploy (stack: monitor)
+just deploy                                 # swarm stack deploy (stack: monitor)
 ```
 
 ## CI

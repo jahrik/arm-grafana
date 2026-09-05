@@ -15,7 +15,7 @@ curl http://localhost:3000/api/health
 
 ```bash
 docker network create -d overlay monitor   # once
-make deploy                                # stack: monitor, behind traefik
+just deploy                                # stack: monitor, behind traefik
 ```
 
 Admin, SMTP, and MySQL settings come from `GF_*` env vars (see `docker-compose.yml`).
@@ -23,8 +23,8 @@ Admin, SMTP, and MySQL settings come from `GF_*` env vars (see `docker-compose.y
 ## Build
 
 ```bash
-make build
-make push
+just build
+just push
 ```
 
 CI: PR builds + `/api/health` check; merge to main pushes multi-arch (amd64/arm64/armv7) to Docker Hub.
